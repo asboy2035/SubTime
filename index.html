@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Timetable</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="controls">
+            <button id="editSubjects">Edit Subjects</button>
+            <button id="exportData">Export Data</button>
+            <button id="importData">Import Data</button>
+            <input type="file" id="importFile" hidden accept=".json">
+        </div>
+
+        <div class="timetable">
+            <div class="timetable-header">
+                <div class="timetable-cell">Time</div>
+                <div class="timetable-cell">Monday</div>
+                <div class="timetable-cell">Tuesday</div>
+                <div class="timetable-cell">Wednesday</div>
+                <div class="timetable-cell">Thursday</div>
+                <div class="timetable-cell">Friday</div>
+            </div>
+            <div class="timetable-body" id="timetableBody"></div>
+        </div>
+    </main>
+
+    <div class="modal" id="subjectPickerModal">
+        <div class="modal-content">
+            <h2>Pick a Subject</h2>
+            <select id="subjectPicker">
+                <!-- Subject options dynamically populated -->
+            </select>
+            <div class="modalActions">
+                <button id="saveSubject">Save</button>
+                <button id="closePickerModal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="subjectModal">
+        <div class="modal-content">
+            <h2>Edit Subjects</h2>
+            <div class="subject-editor">
+                <div class="subject-list" id="subjectList"></div>
+                <div class="modalActions">
+                    <button id="addSubject">Add Subject</button>
+                    <button id="closeModal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
